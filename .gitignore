@@ -1,0 +1,17 @@
+# Terraform (applies across single-vm/, multi-vm/, gke-autopilot/)
+terraform/**/.terraform/
+terraform/**/.terraform.lock.hcl
+terraform/**/*.tfstate
+terraform/**/*.tfstate.backup
+terraform/**/terraform.tfvars
+terraform/**/*.tfplan
+
+# Secrets / credentials -- never commit these
+*.pem
+*.key
+kubeconfig
+*.env
+.env
+
+# OS files
+.DS_Store

@@ -1,0 +1,14 @@
+# terraform.tfvars.example
+# Copy this to terraform.tfvars (which is gitignored) and fill in real values.
+# NEVER commit terraform.tfvars itself -- it's your local config.
+
+project_id      = "kuldeep-cse644-lab"   # must match a real GCP project you've created
+admin_source_ip = "203.0.113.5/32"       # your public IP -- run `curl -s ifconfig.me` and append /32
+
+# Optional overrides (defaults already match the plan):
+# region              = "us-west1"
+# zone                = "us-west1-b"
+# machine_type        = "e2-standard-4"
+# vm_name             = "cse644-lab-vm"
+# ssh_public_key_path = "~/.ssh/id_ed25519.pub"
+# ssh_username        = "kuldeep"

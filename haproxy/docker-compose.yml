@@ -1,0 +1,16 @@
+services:
+  nginx-backend:
+    image: cse644-nginx-custom
+    container_name: nginx-backend
+    networks: [proxy-net]
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    ports: ["8000:80"]
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on: [nginx-backend]
+    networks: [proxy-net]
+networks:
+  proxy-net:
+    driver: bridge
